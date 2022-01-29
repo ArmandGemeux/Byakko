@@ -30,6 +30,9 @@ dashSpeed = 12;
 dashCooldownMax = floor(0.5*room_speed);
 dashCooldown = 0;
 
+windMaxPower = 4;
+windPower = 1;
+
 if(!instance_exists(obj_camera)){
 	instance_create_depth(x,y,-5,obj_camera);	
 }

@@ -40,6 +40,10 @@ if(xspeed != 0){
 		if(!place_meeting(x+sign(xspeed),y,obj_block)){
 			x+=sign(xspeed);	
 			spd--;
+			if(place_meeting(x,y,obj_breakBlock) && dashing){
+				var blk = instance_place(x,y,obj_breakBlock);
+				instance_destroy(blk);
+			}
 		}
 		else {
 			spd = 0;
@@ -66,9 +70,13 @@ else {
         }
     }
     
-    /*if(place_meeting(x,y,obj_wind) && yspeed > -windMaxPower && !place_meeting(x,y-1,obj_block)){
+    if(place_meeting(x,y,obj_windUp) && yspeed > -windMaxPower && !place_meeting(x,y-1,obj_block) && !dashing){
         yspeed -= windPower;
-    }*/
+    }
+	
+	if(place_meeting(x,y,obj_windDown) && !place_meeting(x,y+1,obj_block) && !dashing){
+        yspeed += windPower;
+    }
     
     if((gamepad_button_check_pressed(pad_index,pad_jump) || keyboard_check_pressed(key_jump)) && (place_meeting(x,y+1,obj_block) || doubleJumpCurrent > 0)){
         if(!place_meeting(x,y+1,obj_block)){
@@ -148,6 +156,29 @@ if(/*keyboard_check_pressed(key_swap)*/place_meeting(x,y,obj_swapper)){
 		layer_set_visible("Tileset_Yin",true);	
 		instance_activate_layer("Instances_Yin");	
 	}
+	with(obj_spikes){
+		image_index = other.currentMode == worldMode.yang;
+	}
+}
+
+//////////////////DEATH
+
+var ded = false;
+
+if(place_meeting(x,y,obj_spikes)){
+	ded = true;	
+}
+
+if(place_meeting(x,y,obj_projectile)){
+	ded = true;	
+}
+
+if(bbox_top > room_height){
+	ded = true;	
+}
+
+if(ded){
+	room_restart();	
 }
 
 //////////////////PARTICULES
