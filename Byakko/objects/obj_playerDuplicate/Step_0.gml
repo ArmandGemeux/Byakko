@@ -154,6 +154,9 @@ if(/*keyboard_check_pressed(key_swap)*/place_meeting(x,y,obj_swapper)){
 
 if(doubleJumped){
 	//c'est là ou que tu fout la flotte	(actif que pendant 1 frame)
+	
+part_particles_create(particle_System, x,y, particle_trail, 10);
+
 }
 
 if(featherFalling){
@@ -162,4 +165,13 @@ if(featherFalling){
 
 if(dashing){
 	//dragon dash la quête finale des 7 boules de crystal venues des étoiles (actif tant qu'on est en train de dasher)	
+
+var lenght = 10;
+
+var angleDiff = random_range(-90,90);
+var xDiff = x + lengthdir_x(lenght, direction - 180 + angleDiff);
+var yDiff = y + lengthdir_y(lenght, direction - 180 + angleDiff);
+
+part_particles_create(particle_System, xDiff - facing * 32, yDiff, particle_trail, 1);
+//alarm_set(1,5);
 }

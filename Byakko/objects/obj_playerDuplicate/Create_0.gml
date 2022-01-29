@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
 xaccel = 0.5;
 xspeedMax = 8;
 xdecel = 1;
@@ -55,3 +56,23 @@ key_right = vk_right;
 key_jump = vk_space;
 key_dash = ord("V");
 //key_swap = ord("V");
+
+// Particles
+
+particle_System = part_system_create();
+particle_trail = part_type_create();
+
+var gravityDirection = random_range(180, 320);
+var gravityIntensity = random_range(0.1, 0.3);
+
+var lifetimeRotation = random_range(2, 5);
+
+part_type_sprite(particle_trail, s_leaf,0,0,0);
+part_type_life(particle_trail, 10,45);
+part_type_orientation(particle_trail, -180, 180, 0, lifetimeRotation, 0);
+part_type_gravity(particle_trail, gravityIntensity, gravityDirection);
+part_type_alpha3(particle_trail, 1,0.5,0);
+part_type_size(particle_trail, 0.04,0.12,0,0);
+
+//alarm[0] = 300;
+//alarm[1] = 5;
