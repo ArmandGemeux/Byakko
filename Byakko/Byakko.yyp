@@ -1,6 +1,8 @@
 {
   "resources": [
     {"id":{"name":"s_windUp","path":"sprites/s_windUp/s_windUp.yy",},"order":7,},
+    {"id":{"name":"obj_title","path":"objects/obj_title/obj_title.yy",},"order":12,},
+    {"id":{"name":"font_main","path":"fonts/font_main/font_main.yy",},"order":0,},
     {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},"order":0,},
     {"id":{"name":"obj_projectile","path":"objects/obj_projectile/obj_projectile.yy",},"order":8,},
     {"id":{"name":"s_spikes","path":"sprites/s_spikes/s_spikes.yy",},"order":5,},
@@ -8,8 +10,10 @@
     {"id":{"name":"s_projectile","path":"sprites/s_projectile/s_projectile.yy",},"order":6,},
     {"id":{"name":"obj_swapper","path":"objects/obj_swapper/obj_swapper.yy",},"order":4,},
     {"id":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},"order":1,},
+    {"id":{"name":"s_title","path":"sprites/s_title/s_title.yy",},"order":9,},
     {"id":{"name":"obj_breakBlock","path":"objects/obj_breakBlock/obj_breakBlock.yy",},"order":6,},
     {"id":{"name":"s_swapper","path":"sprites/s_swapper/s_swapper.yy",},"order":3,},
+    {"id":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},"order":2,},
     {"id":{"name":"rm_splash","path":"rooms/rm_splash/rm_splash.yy",},"order":1,},
     {"id":{"name":"s_player","path":"sprites/s_player/s_player.yy",},"order":1,},
     {"id":{"name":"obj_playerDuplicate","path":"objects/obj_playerDuplicate/obj_playerDuplicate.yy",},"order":5,},
@@ -40,6 +44,7 @@
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"rm_splash","path":"rooms/rm_splash/rm_splash.yy",},},
+    {"roomId":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
     {"roomId":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
   ],
   "Folders": [
