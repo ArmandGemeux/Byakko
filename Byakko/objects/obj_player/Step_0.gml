@@ -156,9 +156,9 @@ if(/*keyboard_check_pressed(key_swap)*/place_meeting(x,y,obj_swapper)){
 		layer_set_visible("Tileset_Yin",true);	
 		instance_activate_layer("Instances_Yin");	
 	}
-	with(obj_spikes){
+	/*with(obj_spikes){
 		image_index = other.currentMode == worldMode.yang;
-	}
+	}*/
 }
 
 //////////////////DEATH
