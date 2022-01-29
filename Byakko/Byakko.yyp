@@ -7,6 +7,7 @@
     {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},"order":0,},
     {"id":{"name":"obj_projectile","path":"objects/obj_projectile/obj_projectile.yy",},"order":8,},
     {"id":{"name":"s_leaf","path":"sprites/s_leaf/s_leaf.yy",},"order":14,},
+    {"id":{"name":"s_dot","path":"sprites/s_dot/s_dot.yy",},"order":15,},
     {"id":{"name":"shd_invert","path":"shaders/shd_invert/shd_invert.yy",},"order":0,},
     {"id":{"name":"obj_gameStart","path":"objects/obj_gameStart/obj_gameStart.yy",},"order":3,},
     {"id":{"name":"s_projectile","path":"sprites/s_projectile/s_projectile.yy",},"order":6,},

@@ -57,22 +57,35 @@ key_jump = vk_space;
 key_dash = ord("V");
 //key_swap = ord("V");
 
-// Particles
+//Dash
 
 particle_System = part_system_create();
-particle_trail = part_type_create();
+particle_dashTrail = part_type_create();
 
-var gravityDirection = random_range(180, 320);
-var gravityIntensity = random_range(0.1, 0.3);
+var dashGravityDirection = random_range(180, 320);
+var dashGravityIntensity = random_range(0.1, 0.3);
 
 var lifetimeRotation = random_range(2, 5);
 
-part_type_sprite(particle_trail, s_leaf,0,0,0);
-part_type_life(particle_trail, 10,45);
-part_type_orientation(particle_trail, -180, 180, 0, lifetimeRotation, 0);
-part_type_gravity(particle_trail, gravityIntensity, gravityDirection);
-part_type_alpha3(particle_trail, 1,0.5,0);
-part_type_size(particle_trail, 0.04,0.12,0,0);
+part_type_sprite(particle_dashTrail, s_leaf,0,0,0);
+part_type_life(particle_dashTrail, 10,45);
+part_type_orientation(particle_dashTrail, -180, 180, 0, lifetimeRotation, 0);
+part_type_gravity(particle_dashTrail, dashGravityIntensity, dashGravityDirection);
+part_type_alpha3(particle_dashTrail, 1,0.5,0);
+part_type_size(particle_dashTrail, 0.04,0.12,0,0);
+
+//Feather Fall
+
+particle_featherfallTrail = part_type_create();
+
+var featherFallGravityIntensity = random_range(-0.2, -0.6);
+
+part_type_sprite(particle_featherfallTrail, s_dot, 0,0,0);
+part_type_life(particle_featherfallTrail, 3, 40);
+part_type_orientation(particle_featherfallTrail, -180, 180, 0, lifetimeRotation, 0);
+part_type_gravity(particle_featherfallTrail, featherFallGravityIntensity, 270);
+part_type_alpha3(particle_featherfallTrail, 1,0.3,0);
+part_type_size(particle_featherfallTrail, 0.02, 0.1, 0,0);
 
 //alarm[0] = 300;
 //alarm[1] = 5;

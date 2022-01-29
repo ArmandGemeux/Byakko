@@ -155,12 +155,21 @@ if(/*keyboard_check_pressed(key_swap)*/place_meeting(x,y,obj_swapper)){
 if(doubleJumped){
 	//c'est là ou que tu fout la flotte	(actif que pendant 1 frame)
 	
-part_particles_create(particle_System, x,y, particle_trail, 10);
+part_particles_create(particle_System, x,y, particle_dashTrail, 10);
 
 }
 
 if(featherFalling){
 	//le phénix tombe po super vite sinon il crame dans l'atmosphère? (actif tant qu'on maintient le feather fall
+	
+var lenght = 10;
+
+var angleDiff = random_range(-90,90);
+//var xDiff = x + lengthdir_x(lenght, direction - 180 + angleDiff);
+var yDiff = y + lengthdir_y(lenght, direction - 180 + angleDiff);
+
+part_particles_create(particle_System, x, y - 64, particle_featherfallTrail, 1);
+
 }
 
 if(dashing){
@@ -172,6 +181,6 @@ var angleDiff = random_range(-90,90);
 var xDiff = x + lengthdir_x(lenght, direction - 180 + angleDiff);
 var yDiff = y + lengthdir_y(lenght, direction - 180 + angleDiff);
 
-part_particles_create(particle_System, xDiff - facing * 32, yDiff, particle_trail, 1);
+part_particles_create(particle_System, xDiff - facing * 32, yDiff, particle_dashTrail, 1);
 //alarm_set(1,5);
 }
