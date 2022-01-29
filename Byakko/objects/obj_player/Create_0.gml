@@ -33,6 +33,8 @@ dashCooldown = 0;
 windMaxPower = 4;
 windPower = 1;
 
+subimWings = 0;
+
 if(!instance_exists(obj_camera)){
 	instance_create_depth(x,y,-5,obj_camera);	
 }

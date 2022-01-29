@@ -185,10 +185,16 @@ if(ded){
 
 if(doubleJumped){
 	//c'est là ou que tu fout la flotte	(actif que pendant 1 frame)
+	var fx = instance_create_layer(x,bbox_bottom,layer,obj_fx);
+	fx.sprite_index = s_doubleJump_fx;
 }
 
 if(featherFalling){
 	//le phénix tombe po super vite sinon il crame dans l'atmosphère? (actif tant qu'on maintient le feather fall
+	subimWings = min(subimWings+0.25,sprite_get_number(s_wings_fx)-1);
+}
+else {
+	subimWings = 0;	
 }
 
 if(dashing){
