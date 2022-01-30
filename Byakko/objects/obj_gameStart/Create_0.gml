@@ -9,6 +9,8 @@ global.tempDoubleJump = false;
 global.tempFloat = false;
 global.tempDash = false;
 
+global.nextRoom = rm_stageSelect;
+
 enum worldMode {
 	yin,
 	yang
