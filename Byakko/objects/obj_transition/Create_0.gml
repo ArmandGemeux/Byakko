@@ -17,7 +17,7 @@ switch(global.nextRoom){
 	case rm_phoenixStart:
 		name = "Zhuque";
 		title = "Phénix";
-		dialog = "Absence de faute / wu jiu";
+		dialog = "Stabiliser le dos sans saisir le corps / Gen qi bei bu huo qi shen";
 		skill = "Maintenez le saut pour planner"; 
 		break;
 	case rm_turtleEnd:
@@ -35,7 +35,7 @@ switch(global.nextRoom){
 	case rm_phoenixEnd:
 		name = "Zhuque";
 		title = "Phénix";
-		dialog = "Stabiliser le dos sans saisir le corps / Gen qi bei bu huo qi shen";
+		dialog = "Absence de faute / wu jiu";
 		skill = "Maintenez le saut pour planner"; 
 		break;
 	default:

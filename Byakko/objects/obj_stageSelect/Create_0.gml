@@ -6,6 +6,13 @@ global.tempDash = false;
 global.tempDoubleJump = false;
 global.tempFloat = false;
 
+if(!audio_is_playing(snd_MainMenuTheme)){
+	audio_stop_sound(global.music);
+	global.music = snd_MainMenuTheme;
+	audio_play_sound(global.music,1,true);
+	audio_sound_gain(global.music,0.5,0);
+}
+
 pad_index = 0;
 if(!gamepad_is_connected(pad_index)){
 	pad_index = 4;	

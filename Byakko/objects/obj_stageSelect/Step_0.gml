@@ -20,10 +20,14 @@ if(keyboard_check_pressed(key_down) || gamepad_axis_value(pad_index,pad_vaxis)> 
 }
 
 if(keyboard_check_pressed(key_valid) || gamepad_button_check_pressed(pad_index,pad_valid)){
+	audio_stop_sound(global.music);
 	switch(index){
-		case 1: global.tempDoubleJump = true; global.nextRoom = rm_turtleStart; break;
-		case 2: global.tempDash = true; global.nextRoom = rm_dragonStart; break;
-		case 3: global.tempFloat = true; global.nextRoom = rm_phoenixStart; break;
+		case 1: global.tempDoubleJump = true; global.nextRoom = rm_turtleStart; global.music = snd_NorthTheme; break;
+		case 2: global.tempDash = true; global.nextRoom = rm_dragonStart; global.music = snd_EastTheme; break;
+		case 3: global.tempFloat = true; global.nextRoom = rm_phoenixStart; global.music = snd_SouthTheme; break;
 	}
+
+	audio_play_sound(global.music,1,true);
+	audio_sound_gain(global.music,0.5,0);
 	room_goto(rm_transition);
 }
