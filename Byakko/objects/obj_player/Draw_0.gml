@@ -12,7 +12,12 @@ if(place_meeting(x,y+1,obj_block)){
 }
 else {
 	//jump anim
-	spriteDraw = s_player_jump;
+	if(place_meeting(x,y,obj_windUp) || featherFalling){
+		spriteDraw = s_player_glide;	
+	}
+	else {
+		spriteDraw = s_player_jump;
+	}
 }
 
 if(active){
@@ -20,6 +25,12 @@ if(active){
 	if(spriteDraw == s_player_jump){
 		if(subim >= sprite_get_number(s_player_jump)){
 			subim = sprite_get_number(s_player_jump)-1;	
+		}
+	}
+	
+	if(spriteDraw == s_player_glide){
+		if(subim >= sprite_get_number(s_player_glide)){
+			subim = sprite_get_number(s_player_glide)-1;	
 		}
 	}
 }

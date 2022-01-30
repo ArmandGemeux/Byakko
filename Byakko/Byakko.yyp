@@ -49,6 +49,7 @@
     {"id":{"name":"s_doubleJump_fx","path":"sprites/s_doubleJump_fx/s_doubleJump_fx.yy",},"order":13,},
     {"id":{"name":"rm_splash","path":"rooms/rm_splash/rm_splash.yy",},"order":1,},
     {"id":{"name":"snd_WorldVictory","path":"sounds/snd_WorldVictory/snd_WorldVictory.yy",},"order":12,},
+    {"id":{"name":"s_player_glide","path":"sprites/s_player_glide/s_player_glide.yy",},"order":23,},
     {"id":{"name":"s_player","path":"sprites/s_player/s_player.yy",},"order":1,},
     {"id":{"name":"obj_playerDuplicate","path":"objects/obj_playerDuplicate/obj_playerDuplicate.yy",},"order":5,},
     {"id":{"name":"obj_projectileSpawner","path":"objects/obj_projectileSpawner/obj_projectileSpawner.yy",},"order":9,},
