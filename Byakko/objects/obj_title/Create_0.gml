@@ -17,3 +17,10 @@ pad_released = false;
 key_up = vk_up;
 key_down = vk_down;
 key_valid = vk_space;
+
+if(!audio_is_playing(snd_MainMenuTheme)){
+	audio_stop_sound(global.music);
+	global.music = snd_MainMenuTheme;
+	audio_play_sound(global.music,1,true);
+	audio_sound_gain(global.music,0.5,0);	
+}

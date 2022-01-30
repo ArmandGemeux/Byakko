@@ -45,6 +45,7 @@ if(xspeed != 0){
 			if(place_meeting(x,y,obj_breakBlock) && dashing){
 				var blk = instance_place(x,y,obj_breakBlock);
 				instance_destroy(blk);
+				audio_play_sound(snd_WallExplosion,1,false);
 			}
 			if(bbox_left < 0){
 				x++;
@@ -91,7 +92,7 @@ else {
         }
         yspeed = -jumpPower;
         jumpFrameCurrent = jumpFrameMax;
-        //audio_play_sound(snd_Jump,1,false);
+        audio_play_sound(snd_Jump,1,false);
     }
     
     if((gamepad_button_check_released(pad_index,pad_jump) || keyboard_check_released(key_jump)) && jumpFrameCurrent > 0){
@@ -142,6 +143,7 @@ if(global.dash || global.tempDash){
 			if(keyboard_check_pressed(key_dash) || gamepad_button_check_pressed(pad_index,pad_dash)){
 				dashing = true;
 				dashCurrentFrame = dashMaxFrame;
+				audio_play_sound(snd_Dash,1,false);
 			}
 		}
 	}
@@ -156,6 +158,7 @@ if(/*keyboard_check_pressed(key_swap)*/place_meeting(x,y,obj_swapper)){
 		instance_deactivate_layer("Instances_Yin");
 		layer_set_visible("Tileset_Yang",true);	
 		instance_activate_layer("Instances_Yang");
+		audio_play_sound(snd_Yang,1,false);
 	}
 	else {
 		currentMode = worldMode.yin;
@@ -163,6 +166,7 @@ if(/*keyboard_check_pressed(key_swap)*/place_meeting(x,y,obj_swapper)){
 		instance_deactivate_layer("Instances_Yang");
 		layer_set_visible("Tileset_Yin",true);	
 		instance_activate_layer("Instances_Yin");	
+		audio_play_sound(snd_Yin,1,false);
 	}
 	/*with(obj_spikes){
 		image_index = other.currentMode == worldMode.yang;
@@ -186,6 +190,7 @@ if(bbox_top > room_height){
 }
 
 if(ded){
+	audio_play_sound(snd_Death,1,false);
 	room_restart();	
 }
 
@@ -193,6 +198,7 @@ if(ded){
 
 if(!ded && bbox_left >= room_width){
 	global.nextRoom = room_next(room);
+	audio_play_sound(snd_WorldVictory,1,false);
 	room_goto(rm_transition);
 	//room_goto_next();	
 }
