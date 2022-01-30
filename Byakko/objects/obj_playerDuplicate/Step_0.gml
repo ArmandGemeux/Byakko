@@ -209,7 +209,7 @@ if(featherFalling){
 	//var xDiff = x + lengthdir_x(lenght, direction - 180 + angleDiff);
 	var yDiff = y + lengthdir_y(lenght, direction - 180 + angleDiff);
 
-	part_particles_create(particle_System, x, y - 64, particle_featherfallTrail, 1);
+	part_particles_create(particle_System, x, yDiff - 64, particle_featherfallTrail, 1);
 }
 else {
 	subimWings = 0;	

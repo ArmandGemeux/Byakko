@@ -85,10 +85,12 @@ part_type_size(particle_dashTrail, 0.04,0.12,0,0);
 particle_featherfallTrail = part_type_create();
 
 var featherFallGravityIntensity = random_range(-0.2, -0.6);
+var featherFallStretch = random_range(0, 0.2);
+//var featherSizeWiggle = random_range(0, 0.2);
 
-part_type_sprite(particle_featherfallTrail, s_dot, 0,0,0);
+part_type_sprite(particle_featherfallTrail, s_dot, 0,featherFallStretch,0);
 part_type_life(particle_featherfallTrail, 3, 40);
 part_type_orientation(particle_featherfallTrail, -180, 180, 0, lifetimeRotation, 0);
 part_type_gravity(particle_featherfallTrail, featherFallGravityIntensity, 270);
-part_type_alpha3(particle_featherfallTrail, 1,0.3,0);
-part_type_size(particle_featherfallTrail, 0.02, 0.1, 0,0);
+part_type_alpha3(particle_featherfallTrail, 0.5,0.2,0);
+part_type_size(particle_featherfallTrail, 0.005, 0.05, 0,0);
