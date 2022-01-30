@@ -11,7 +11,7 @@ grav = 0.5;
 yspeedMax = 12;
 
 doubleJumpMax = 0;
-if(global.doubleJump)
+if(global.doubleJump || global.tempDoubleJump)
 	doubleJumpMax = 1;
 
 xspeed = 0;

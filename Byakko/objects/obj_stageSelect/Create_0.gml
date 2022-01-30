@@ -2,6 +2,10 @@
 // You can write your code in this editor
 index = 0;
 
+global.tempDash = false;
+global.tempDoubleJump = false;
+global.tempFloat = false;
+
 pad_index = 0;
 if(!gamepad_is_connected(pad_index)){
 	pad_index = 4;	

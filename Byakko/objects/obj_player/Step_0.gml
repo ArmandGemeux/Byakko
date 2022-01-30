@@ -61,7 +61,7 @@ if(dashing){
 }
 else {
 	if(!place_meeting(x,y+1,obj_block) && jumpFrameCurrent == 0){
-        if(!global.float || (!gamepad_button_check(pad_index,pad_jump) && !keyboard_check(key_jump))){
+        if((!global.float && !global.tempFloat) || (!gamepad_button_check(pad_index,pad_jump) && !keyboard_check(key_jump))){
             yspeed = min(yspeed+grav,yspeedMax);
         }
         else {
@@ -120,7 +120,7 @@ if(yspeed != 0){
 }
 
 ////////////////////DASHING
-if(global.dash){
+if(global.dash || global.tempDash){
 	if(dashing){
 		dashCurrentFrame--;
 		if(dashCurrentFrame == 0){
