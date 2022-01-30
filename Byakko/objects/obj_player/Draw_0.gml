@@ -3,7 +3,8 @@
 
 draw_self();
 
-var spriteDraw = s_player_idle;
+var spriteDraw = s_player_idleAnim;
+subim += 1;
 draw_sprite_ext(spriteDraw,subim,x,y,facing,1,0,c_white,1);
 
 if(subimWings > 0){
