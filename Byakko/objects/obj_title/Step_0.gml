@@ -7,6 +7,7 @@ if(keyboard_check_pressed(key_down) || (gamepad_axis_value(pad_index,pad_vaxis)>
 		index = 0;	
 	}
 	pad_released = false;	
+	audio_play_sound(snd_UISelect,1,false);
 }
 
 if(keyboard_check_pressed(key_up) || (gamepad_axis_value(pad_index,pad_vaxis)<-0.5 && pad_released ) ){
@@ -15,6 +16,7 @@ if(keyboard_check_pressed(key_up) || (gamepad_axis_value(pad_index,pad_vaxis)<-0
 		index = maxIndex-1;	
 	}
 	pad_released = false;	
+	audio_play_sound(snd_UISelect,1,false);
 }
 
 if(gamepad_axis_value(pad_index,pad_vaxis)>-0.5 && gamepad_axis_value(pad_index,pad_vaxis)<0.5){
