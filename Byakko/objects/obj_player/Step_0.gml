@@ -91,6 +91,7 @@ else {
 			doubleJumped = true;
         }
         yspeed = -jumpPower;
+		subim = 0;
         jumpFrameCurrent = jumpFrameMax;
         audio_play_sound(snd_Jump,1,false);
     }

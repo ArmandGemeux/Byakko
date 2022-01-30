@@ -12,11 +12,17 @@ if(place_meeting(x,y+1,obj_block)){
 }
 else {
 	//jump anim
-	spriteDraw = s_player_idleAnim;
+	spriteDraw = s_player_jump;
 }
 
-if(active)
+if(active){
 	subim += 1;
+	if(spriteDraw == s_player_jump){
+		if(subim >= sprite_get_number(s_player_jump)){
+			subim = sprite_get_number(s_player_jump)-1;	
+		}
+	}
+}
 
 draw_sprite_ext(spriteDraw,subim,x,y,facing,1,0,c_white,1);
 

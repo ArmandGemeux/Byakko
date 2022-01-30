@@ -19,4 +19,5 @@ var txt = string_copy(dialog,1,floor(dialogIndex));
 var decal = string_width(dialog)/2;
 draw_text(960-decal,room_height/3,txt);
 
-draw_sprite(s_player_idle,0,playerPos,(2*room_height)/3);
+subim+= 1;
+draw_sprite(s_player_run,subim,playerPos,(2*room_height)/3);
