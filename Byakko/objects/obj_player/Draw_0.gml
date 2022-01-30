@@ -7,7 +7,7 @@ var spriteDraw = s_player_idleAnim;
 if(place_meeting(x,y+1,obj_block)){
 	if(xspeed != 0){
 		//run anim
-		spriteDraw = s_player_idleAnim;	
+		spriteDraw = s_player_run;	
 	}
 }
 else {

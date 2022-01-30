@@ -28,6 +28,7 @@
     {"id":{"name":"s_projectile","path":"sprites/s_projectile/s_projectile.yy",},"order":4,},
     {"id":{"name":"obj_swapper","path":"objects/obj_swapper/obj_swapper.yy",},"order":4,},
     {"id":{"name":"s_phoenix","path":"sprites/s_phoenix/s_phoenix.yy",},"order":18,},
+    {"id":{"name":"s_player_run","path":"sprites/s_player_run/s_player_run.yy",},"order":21,},
     {"id":{"name":"snd_MainMenuTheme","path":"sounds/snd_MainMenuTheme/snd_MainMenuTheme.yy",},"order":5,},
     {"id":{"name":"snd_Dash","path":"sounds/snd_Dash/snd_Dash.yy",},"order":0,},
     {"id":{"name":"snd_Projectile","path":"sounds/snd_Projectile/snd_Projectile.yy",},"order":7,},
