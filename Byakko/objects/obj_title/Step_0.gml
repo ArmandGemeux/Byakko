@@ -28,6 +28,6 @@ if(gamepad_axis_value(pad_index,pad_vaxis)>-0.5 && gamepad_axis_value(pad_index,
 if(keyboard_check_pressed(key_valid) || gamepad_button_check_pressed(pad_index,pad_valid)){
 	switch(index){
 		case 0: global.dash = false; global.doubleJump = false; global.float = false; room_goto_next(); break;
-		case 3: game_end();
+		case 1: game_end();
 	}
 }

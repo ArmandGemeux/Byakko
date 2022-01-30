@@ -12,17 +12,17 @@ if(index == 0)
 draw_text(room_width/2,room_height/2,"New game");
 
 draw_set_color(c_white);
-if(index == 1) 
+/*if(index == 1) 
 	draw_set_color(c_red);
 draw_text(room_width/2,(room_height/2)+64,"Continue");
 
 draw_set_color(c_white);
 if(index == 2) 
 	draw_set_color(c_red);
-draw_text(room_width/2,(room_height/2)+128,"Time attack");
+draw_text(room_width/2,(room_height/2)+128,"Time attack");*/
 
 draw_set_color(c_white);
-if(index == 3) 
+if(index == 1) 
 	draw_set_color(c_red);
 draw_text(room_width/2,(room_height/2)+196,"Quit");
 
