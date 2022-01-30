@@ -195,11 +195,21 @@ if(doubleJumped){
 	//c'est là ou que tu fout la flotte	(actif que pendant 1 frame)
 	var fx = instance_create_layer(x,bbox_bottom,layer,obj_fx);
 	fx.sprite_index = s_doubleJump_fx;
+	
+	part_particles_create(particle_System, x,y + 64, particle_featherfallTrail, 10);
 }
 
 if(featherFalling){
 	//le phénix tombe po super vite sinon il crame dans l'atmosphère? (actif tant qu'on maintient le feather fall
 	subimWings = min(subimWings+0.25,sprite_get_number(s_wings_fx)-1);
+	
+	var lenght = 10;
+
+	var angleDiff = 90;
+	//var xDiff = x + lengthdir_x(lenght, direction - 180 + angleDiff);
+	var yDiff = y + lengthdir_y(lenght, direction - 180 + angleDiff);
+
+	part_particles_create(particle_System, x, y - 64, particle_featherfallTrail, 1);
 }
 else {
 	subimWings = 0;	
@@ -207,4 +217,12 @@ else {
 
 if(dashing){
 	//dragon dash la quête finale des 7 boules de crystal venues des étoiles (actif tant qu'on est en train de dasher)	
+	
+	var lenght = 10;
+
+	var angleDiff = random_range(-90,90);
+	var xDiff = x + lengthdir_x(lenght, direction - 180 + angleDiff);
+	var yDiff = y + lengthdir_y(lenght, direction - 180 + angleDiff);
+
+	part_particles_create(particle_System, xDiff - facing * 32, yDiff, particle_dashTrail, 1);
 }

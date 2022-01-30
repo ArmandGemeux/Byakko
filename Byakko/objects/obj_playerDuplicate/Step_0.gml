@@ -40,6 +40,10 @@ if(xspeed != 0){
 		if(!place_meeting(x+sign(xspeed),y,obj_block)){
 			x+=sign(xspeed);	
 			spd--;
+			if(place_meeting(x,y,obj_breakBlock) && dashing){
+				var blk = instance_place(x,y,obj_breakBlock);
+				instance_destroy(blk);
+			}
 		}
 		else {
 			spd = 0;
@@ -66,9 +70,13 @@ else {
         }
     }
     
-    /*if(place_meeting(x,y,obj_wind) && yspeed > -windMaxPower && !place_meeting(x,y-1,obj_block)){
+    if(place_meeting(x,y,obj_windUp) && yspeed > -windMaxPower && !place_meeting(x,y-1,obj_block) && !dashing){
         yspeed -= windPower;
-    }*/
+    }
+	
+	if(place_meeting(x,y,obj_windDown) && !place_meeting(x,y+1,obj_block) && !dashing){
+        yspeed += windPower;
+    }
     
     if((gamepad_button_check_pressed(pad_index,pad_jump) || keyboard_check_pressed(key_jump)) && (place_meeting(x,y+1,obj_block) || doubleJumpCurrent > 0)){
         if(!place_meeting(x,y+1,obj_block)){
@@ -112,21 +120,23 @@ if(yspeed != 0){
 }
 
 ////////////////////DASHING
-if(dashing){
-	dashCurrentFrame--;
-	if(dashCurrentFrame == 0){
-		dashing = false;
-		dashCooldown = dashCooldownMax;
-	}
-}
-else {
-	if(dashCooldown > 0){
-		dashCooldown--;	
+if(global.dash){
+	if(dashing){
+		dashCurrentFrame--;
+		if(dashCurrentFrame == 0){
+			dashing = false;
+			dashCooldown = dashCooldownMax;
+		}
 	}
 	else {
-		if(keyboard_check_pressed(key_dash) || gamepad_button_check_pressed(pad_index,pad_dash)){
-			dashing = true;
-			dashCurrentFrame = dashMaxFrame;
+		if(dashCooldown > 0){
+			dashCooldown--;	
+		}
+		else {
+			if(keyboard_check_pressed(key_dash) || gamepad_button_check_pressed(pad_index,pad_dash)){
+				dashing = true;
+				dashCurrentFrame = dashMaxFrame;
+			}
 		}
 	}
 }
@@ -148,39 +158,71 @@ if(/*keyboard_check_pressed(key_swap)*/place_meeting(x,y,obj_swapper)){
 		layer_set_visible("Tileset_Yin",true);	
 		instance_activate_layer("Instances_Yin");	
 	}
+	/*with(obj_spikes){
+		image_index = other.currentMode == worldMode.yang;
+	}*/
+}
+
+//////////////////DEATH
+
+var ded = false;
+
+if(place_meeting(x,y,obj_spikes)){
+	ded = true;	
+}
+
+if(place_meeting(x,y,obj_projectile)){
+	ded = true;	
+}
+
+if(bbox_top > room_height){
+	ded = true;	
+}
+
+if(ded){
+	room_restart();	
+}
+
+//////////////////LEVEL END
+
+if(!ded && bbox_left >= room_width){
+	room_goto_next();	
 }
 
 //////////////////PARTICULES
 
 if(doubleJumped){
 	//c'est là ou que tu fout la flotte	(actif que pendant 1 frame)
+	var fx = instance_create_layer(x,bbox_bottom,layer,obj_fx);
+	fx.sprite_index = s_doubleJump_fx;
 	
-part_particles_create(particle_System, x,y, particle_dashTrail, 10);
-
+	part_particles_create(particle_System, x,y + 64, particle_featherfallTrail, 10);
 }
 
 if(featherFalling){
 	//le phénix tombe po super vite sinon il crame dans l'atmosphère? (actif tant qu'on maintient le feather fall
+	subimWings = min(subimWings+0.25,sprite_get_number(s_wings_fx)-1);
 	
-var lenght = 10;
+	var lenght = 10;
 
-var angleDiff = random_range(-90,90);
-//var xDiff = x + lengthdir_x(lenght, direction - 180 + angleDiff);
-var yDiff = y + lengthdir_y(lenght, direction - 180 + angleDiff);
+	var angleDiff = random_range(-90,90);
+	//var xDiff = x + lengthdir_x(lenght, direction - 180 + angleDiff);
+	var yDiff = y + lengthdir_y(lenght, direction - 180 + angleDiff);
 
-part_particles_create(particle_System, x, y - 64, particle_featherfallTrail, 1);
-
+	part_particles_create(particle_System, x, y - 64, particle_featherfallTrail, 1);
+}
+else {
+	subimWings = 0;	
 }
 
 if(dashing){
 	//dragon dash la quête finale des 7 boules de crystal venues des étoiles (actif tant qu'on est en train de dasher)	
+	
+	var lenght = 10;
 
-var lenght = 10;
+	var angleDiff = random_range(-90,90);
+	var xDiff = x + lengthdir_x(lenght, direction - 180 + angleDiff);
+	var yDiff = y + lengthdir_y(lenght, direction - 180 + angleDiff);
 
-var angleDiff = random_range(-90,90);
-var xDiff = x + lengthdir_x(lenght, direction - 180 + angleDiff);
-var yDiff = y + lengthdir_y(lenght, direction - 180 + angleDiff);
-
-part_particles_create(particle_System, xDiff - facing * 32, yDiff, particle_dashTrail, 1);
-//alarm_set(1,5);
+	part_particles_create(particle_System, xDiff - facing * 32, yDiff, particle_dashTrail, 1);
 }

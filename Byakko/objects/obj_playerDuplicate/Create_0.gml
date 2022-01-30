@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
 xaccel = 0.5;
 xspeedMax = 8;
 xdecel = 1;
@@ -31,6 +30,11 @@ dashSpeed = 12;
 dashCooldownMax = floor(0.5*room_speed);
 dashCooldown = 0;
 
+windMaxPower = 4;
+windPower = 1;
+
+subimWings = 0;
+
 if(!instance_exists(obj_camera)){
 	instance_create_depth(x,y,-5,obj_camera);	
 }
@@ -56,6 +60,8 @@ key_right = vk_right;
 key_jump = vk_space;
 key_dash = ord("V");
 //key_swap = ord("V");
+
+//PARTICLES
 
 //Dash
 
@@ -86,6 +92,3 @@ part_type_orientation(particle_featherfallTrail, -180, 180, 0, lifetimeRotation,
 part_type_gravity(particle_featherfallTrail, featherFallGravityIntensity, 270);
 part_type_alpha3(particle_featherfallTrail, 1,0.3,0);
 part_type_size(particle_featherfallTrail, 0.02, 0.1, 0,0);
-
-//alarm[0] = 300;
-//alarm[1] = 5;
