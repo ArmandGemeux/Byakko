@@ -51,6 +51,7 @@ dialogSpeed = 0.25;
 
 playerPos = -120;
 playerSpeed = 8;
+subim = 0;
 
 pad_index = 0;
 if(!gamepad_is_connected(pad_index)){
