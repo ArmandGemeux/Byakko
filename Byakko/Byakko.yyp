@@ -20,6 +20,7 @@
     {"id":{"name":"obj_fx","path":"objects/obj_fx/obj_fx.yy",},"order":13,},
     {"id":{"name":"s_wings_fx","path":"sprites/s_wings_fx/s_wings_fx.yy",},"order":14,},
     {"id":{"name":"shd_invert","path":"shaders/shd_invert/shd_invert.yy",},"order":0,},
+    {"id":{"name":"s_player_dash","path":"sprites/s_player_dash/s_player_dash.yy",},"order":25,},
     {"id":{"name":"obj_gameStart","path":"objects/obj_gameStart/obj_gameStart.yy",},"order":3,},
     {"id":{"name":"rm_dragonStart","path":"rooms/rm_dragonStart/rm_dragonStart.yy",},"order":5,},
     {"id":{"name":"snd_WallExplosion","path":"sounds/snd_WallExplosion/snd_WallExplosion.yy",},"order":11,},
@@ -45,6 +46,7 @@
     {"id":{"name":"s_bamboo","path":"sprites/s_bamboo/s_bamboo.yy",},"order":10,},
     {"id":{"name":"rm_turtleStart","path":"rooms/rm_turtleStart/rm_turtleStart.yy",},"order":4,},
     {"id":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},"order":2,},
+    {"id":{"name":"s_launcher","path":"sprites/s_launcher/s_launcher.yy",},"order":24,},
     {"id":{"name":"snd_UISelect","path":"sounds/snd_UISelect/snd_UISelect.yy",},"order":10,},
     {"id":{"name":"s_doubleJump_fx","path":"sprites/s_doubleJump_fx/s_doubleJump_fx.yy",},"order":13,},
     {"id":{"name":"rm_splash","path":"rooms/rm_splash/rm_splash.yy",},"order":1,},
@@ -84,7 +86,6 @@
   ],
   "isDnDProject": false,
   "isEcma": false,
-  "tutorialPath": "",
   "configs": {
     "name": "Default",
     "children": [],
@@ -128,7 +129,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.7.606",
+    "IDEVersion": "2022.1.0.609",
   },
   "resourceVersion": "1.4",
   "name": "Byakko",

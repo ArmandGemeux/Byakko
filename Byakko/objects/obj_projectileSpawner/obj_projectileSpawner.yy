@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_projectile",
-    "path": "sprites/s_projectile/s_projectile.yy",
+    "name": "s_launcher",
+    "path": "sprites/s_launcher/s_launcher.yy",
   },
   "solid": false,
   "visible": true,

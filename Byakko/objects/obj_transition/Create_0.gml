@@ -38,6 +38,12 @@ switch(global.nextRoom){
 		dialog = "Absence de faute / wu jiu";
 		skill = "Maintenez le saut pour planner"; 
 		break;
+	case rm_dragonSecond:
+		name = "Qinlong";
+		title = "Dragon azur";
+		dialog = "Fondamentalement favorisant / yuan heng";
+		skill = "Appuyez sur B pour foncer et détruire les bambous"; 
+		break;
 	default:
 		name = "Jean-Bob";
 		title = "Marmotte beige verdatre";

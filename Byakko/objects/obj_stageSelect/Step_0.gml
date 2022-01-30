@@ -29,5 +29,11 @@ if(keyboard_check_pressed(key_valid) || gamepad_button_check_pressed(pad_index,p
 
 	audio_play_sound(global.music,1,true);
 	audio_sound_gain(global.music,0.5,0);
+	
+	audio_play_sound(snd_Yin,1,false);
 	room_goto(rm_transition);
+}
+
+if(keyboard_check_pressed(key_cancel) || gamepad_button_check_pressed(pad_index,pad_cancel)){
+	room_goto(rm_title);	
 }

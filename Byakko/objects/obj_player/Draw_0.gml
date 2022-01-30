@@ -1,22 +1,27 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_self();
+//draw_self();
 
 var spriteDraw = s_player_idleAnim;
-if(place_meeting(x,y+1,obj_block)){
-	if(xspeed != 0){
-		//run anim
-		spriteDraw = s_player_run;	
-	}
+if(dashing){
+	spriteDraw = s_player_dash;
 }
 else {
-	//jump anim
-	if(place_meeting(x,y,obj_windUp) || featherFalling){
-		spriteDraw = s_player_glide;	
+	if(place_meeting(x,y+1,obj_block)){
+		if(xspeed != 0){
+			//run anim
+			spriteDraw = s_player_run;	
+		}
 	}
 	else {
-		spriteDraw = s_player_jump;
+		//jump anim
+		if(place_meeting(x,y,obj_windUp) || featherFalling){
+			spriteDraw = s_player_glide;	
+		}
+		else {
+			spriteDraw = s_player_jump;
+		}
 	}
 }
 

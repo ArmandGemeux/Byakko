@@ -21,6 +21,7 @@ if(!gamepad_is_connected(pad_index)){
 pad_haxis = gp_axislh;
 pad_vaxis = gp_axislv;
 pad_valid = gp_face1;
+pad_cancel = gp_face2;
 
 pad_released = false;
 
@@ -28,3 +29,4 @@ key_up = vk_up;
 key_down = vk_down;
 key_right = vk_right;
 key_valid = vk_space;
+key_cancel = vk_escape;
