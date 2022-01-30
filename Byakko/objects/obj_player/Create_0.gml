@@ -35,6 +35,7 @@ windMaxPower = 4;
 windPower = 1;
 
 subimWings = 0;
+featherFalling = false;
 
 active = true;
 

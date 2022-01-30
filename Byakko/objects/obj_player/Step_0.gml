@@ -62,7 +62,7 @@ if(xspeed != 0){
 /////////////VERTICAL MOVEMENT
 
 var doubleJumped = false;
-var featherFalling = false;
+featherFalling = false;
 if(dashing){
 	yspeed = 0;
 }
