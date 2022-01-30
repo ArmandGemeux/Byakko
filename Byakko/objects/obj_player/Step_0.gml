@@ -46,6 +46,10 @@ if(xspeed != 0){
 				var blk = instance_place(x,y,obj_breakBlock);
 				instance_destroy(blk);
 			}
+			if(bbox_left < 0){
+				x++;
+				spd = 0;
+			}
 		}
 		else {
 			spd = 0;
@@ -188,7 +192,9 @@ if(ded){
 //////////////////LEVEL END
 
 if(!ded && bbox_left >= room_width){
-	room_goto_next();	
+	global.nextRoom = room_next(room);
+	room_goto(rm_transition);
+	//room_goto_next();	
 }
 
 //////////////////PARTICULES

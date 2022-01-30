@@ -132,7 +132,7 @@
     "path": "folders/Fonts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "font_main",
+  "name": "font_large",
   "tags": [],
   "resourceType": "GMFont",
 }

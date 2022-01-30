@@ -21,8 +21,9 @@ if(keyboard_check_pressed(key_down) || gamepad_axis_value(pad_index,pad_vaxis)> 
 
 if(keyboard_check_pressed(key_valid) || gamepad_button_check_pressed(pad_index,pad_valid)){
 	switch(index){
-		case 1: global.tempDoubleJump = true; room_goto(rm_turtleStart); break;
-		case 2: global.tempDash = true; room_goto(rm_dragonStart); break;
-		case 3: global.tempFloat = true; room_goto(rm_phoenixStart); break;
+		case 1: global.tempDoubleJump = true; global.nextRoom = rm_turtleStart; break;
+		case 2: global.tempDash = true; global.nextRoom = rm_dragonStart; break;
+		case 3: global.tempFloat = true; global.nextRoom = rm_phoenixStart; break;
 	}
+	room_goto(rm_transition);
 }
