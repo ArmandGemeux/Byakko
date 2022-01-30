@@ -120,21 +120,23 @@ if(yspeed != 0){
 }
 
 ////////////////////DASHING
-if(dashing){
-	dashCurrentFrame--;
-	if(dashCurrentFrame == 0){
-		dashing = false;
-		dashCooldown = dashCooldownMax;
-	}
-}
-else {
-	if(dashCooldown > 0){
-		dashCooldown--;	
+if(global.dash){
+	if(dashing){
+		dashCurrentFrame--;
+		if(dashCurrentFrame == 0){
+			dashing = false;
+			dashCooldown = dashCooldownMax;
+		}
 	}
 	else {
-		if(keyboard_check_pressed(key_dash) || gamepad_button_check_pressed(pad_index,pad_dash)){
-			dashing = true;
-			dashCurrentFrame = dashMaxFrame;
+		if(dashCooldown > 0){
+			dashCooldown--;	
+		}
+		else {
+			if(keyboard_check_pressed(key_dash) || gamepad_button_check_pressed(pad_index,pad_dash)){
+				dashing = true;
+				dashCurrentFrame = dashMaxFrame;
+			}
 		}
 	}
 }
@@ -179,6 +181,12 @@ if(bbox_top > room_height){
 
 if(ded){
 	room_restart();	
+}
+
+//////////////////LEVEL END
+
+if(!ded && bbox_left >= room_width){
+	room_goto_next();	
 }
 
 //////////////////PARTICULES

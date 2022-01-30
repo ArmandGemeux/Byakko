@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-global.doubleJump = true;
-global.float = true;
-global.dash = true;
+global.doubleJump = false;
+global.float = false;
+global.dash = false;
 
 enum worldMode {
 	yin,

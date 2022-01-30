@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_sprite(s_title,0,room_width/2,sprite_get_height(s_title)/2);
+//draw_sprite(s_title,0,room_width/2,sprite_get_height(s_title)/2);
 
 draw_set_font(font_main);
 draw_set_halign(fa_center);
