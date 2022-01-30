@@ -22,3 +22,5 @@ if(!gamepad_is_connected(pad_index)){
 pad_valid = gp_face1;
 
 key_valid = vk_space;
+
+room_goto(rm_stageSelect);	

@@ -17,11 +17,26 @@ switch(global.nextRoom){
 	case rm_phoenixStart:
 		name = "Zhuque";
 		title = "Phénix";
-		dialog = "Stabiliser le dos sans saisir le corps / Gen qi bei bu huo qi shen";
+		dialog = "Absence de faute / wu jiu";
 		skill = "Maintenez le saut pour planner"; 
 		break;
-	case rm_dragonEnd: case rm_turtleEnd: case rm_phoenixEnd:
-		room_goto(global.nextRoom);
+	case rm_turtleEnd:
+		name = "Xuanwu";
+		title = "Tortue serpent noire";
+		dialog = "Agir amène à se surpasser / xong you shang";
+		skill = "Sautez en l'air pour bondir une nouvelle fois"; 
+		break;
+	case rm_dragonEnd:
+		name = "Qinlong";
+		title = "Dragon azur";
+		dialog = "Ténacité profitable / li zhen";
+		skill = "Appuyez sur B pour foncer et détruire les bambous"; 
+		break;
+	case rm_phoenixEnd:
+		name = "Zhuque";
+		title = "Phénix";
+		dialog = "Stabiliser le dos sans saisir le corps / Gen qi bei bu huo qi shen";
+		skill = "Maintenez le saut pour planner"; 
 		break;
 	default:
 		name = "Jean-Bob";
