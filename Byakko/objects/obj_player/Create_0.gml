@@ -18,6 +18,7 @@ xspeed = 0;
 yspeed = 0;
 
 facing = 1;
+subim = 0;
 
 jumpFrameCurrent = 0;
 
