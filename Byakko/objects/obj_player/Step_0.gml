@@ -2,6 +2,8 @@
 // You can write your code in this editor
 
 
+if(active){
+	
 ////////////HORIZONTAL MOVEMENT
 
 if(dashing){
@@ -225,4 +227,11 @@ if(dashing){
 	var yDiff = y + lengthdir_y(lenght, direction - 180 + angleDiff);
 
 	part_particles_create(particle_System, xDiff - facing * 32, yDiff, particle_dashTrail, 1);
+}
+
+}
+
+if(keyboard_check_pressed(key_start) || gamepad_button_check_pressed(pad_index,pad_start)){
+	obj_camera.pause = !obj_camera.pause;
+	active = !obj_camera.pause;
 }

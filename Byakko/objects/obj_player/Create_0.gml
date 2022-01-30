@@ -35,6 +35,8 @@ windPower = 1;
 
 subimWings = 0;
 
+active = true;
+
 if(!instance_exists(obj_camera)){
 	instance_create_depth(x,y,-5,obj_camera);	
 }
@@ -53,12 +55,14 @@ if(!gamepad_is_connected(pad_index)){
 pad_haxis = gp_axislh;
 pad_jump = gp_face1;
 pad_dash = gp_face2;
+pad_start = gp_start;
 //pad_swap = gp_shoulderrb;
 
 key_left = vk_left;
 key_right = vk_right;
 key_jump = vk_space;
 key_dash = ord("V");
+key_start = vk_enter;
 //key_swap = ord("V");
 
 //PARTICLES
